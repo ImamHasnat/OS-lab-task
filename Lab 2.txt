@@ -1,0 +1,110 @@
+1. Write a program in shell scripting to swap two numbars using a function.
+2. Write shell scripting program to sort an array of integers in ascending or descending order using a function.
+3.Wkrite a shell scripting program to find the maxieum and minarm of values of an array using a function solve in Linux command.
+
+
+
+
+Solution-------
+
+
+
+#!/bin/bash
+
+# Function to swap two numbers
+swap() {
+    temp=$1
+    eval "$1=\$2"
+    eval "$2=\$temp"
+}
+
+# Function to sort the array in ascending or descending order
+sort_array() {
+    array=("$@")
+    order=$1
+    len=${#array[@]}
+
+    for ((i = 0; i < len; i++)); do
+        for ((j = i + 1; j < len; j++)); do
+            if [ "$order" == "asc" ]; then
+                if [ "${array[i]}" -gt "${array[j]}" ]; then
+                    temp=${array[i]}
+                    array[i]=${array[j]}
+                    array[j]=$temp
+                fi
+            elif [ "$order" == "desc" ]; then
+                if [ "${array[i]}" -lt "${array[j]}" ]; then
+                    temp=${array[i]}
+                    array[i]=${array[j]}
+                    array[j]=$temp
+                fi
+            fi
+        done
+    done
+    echo "Sorted array: ${array[@]}"
+}
+
+# Function to find the maximum and minimum values of an array
+find_max_min() {
+    max=$1
+    min=$1
+    for num in "$@"; do
+        if [ "$num" -gt "$max" ]; then
+            max=$num
+        fi
+        if [ "$num" -lt "$min" ]; then
+            min=$num
+        fi
+    done
+    echo "Maximum value: $max"
+    echo "Minimum value: $min"
+}
+
+# Main menu for the user to choose the task
+echo "Choose an option:"
+echo "1. Swap two numbers"
+echo "2. Sort an array of integers"
+echo "3. Find the max and min of an array"
+echo "Enter your choice (1/2/3): "
+read choice
+
+case $choice in
+    1)
+        # Swap two numbers
+        echo "Enter first number: "
+        read num1
+        echo "Enter second number: "
+        read num2
+
+        echo "Before swap: num1 = $num1, num2 = $num2"
+
+        # Call swap function
+        swap num1 num2
+
+        echo "After swap: num1 = $num1, num2 = $num2"
+        ;;
+
+    2)
+        # Sort an array
+        echo "Enter numbers separated by space: "
+        read -a arr
+        echo "Enter sort order (asc/desc): "
+        read order
+
+        # Call sort function
+        sort_array "$order" "${arr[@]}"
+        ;;
+
+    3)
+        # Find max and min of an array
+        echo "Enter numbers separated by space: "
+        read -a arr
+
+        # Call find_max_min function
+        find_max_min "${arr[@]}"
+        ;;
+
+    *)
+        echo "Invalid choice. Please select 1, 2, or 3."
+        ;;
+esac
