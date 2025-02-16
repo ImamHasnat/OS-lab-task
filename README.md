@@ -7,7 +7,7 @@ This repository contains OS lab tasks.
 - GCC Compiler (for C programs)  
 - Git  
 
-## 🚀 How to Run  
+## How to Run  
 1. Clone the repository:  
    ```bash
    git clone https://github.com/your-username/OS-Lab-Tasks.git
@@ -19,7 +19,7 @@ This repository contains OS lab tasks.
    ./output.out
    ```
 
-## 🤝 Contribute  
+##  Contribute  
 - Fork the repo  
 - Create a new branch  
 - Commit and push your changes  
