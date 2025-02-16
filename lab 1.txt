@@ -1,0 +1,57 @@
+
+
+1. Find the Factorial of a given Number N.
+2. Count the number of odd digits of a given integer.
+   Example:
+     Enter an integer Number: (use while loop)
+     Number of Odd Digits is 3
+3. Print the given pattern using loop
+
+******
+*****
+****
+***
+**
+*
+
+
+
+Solution----
+
+
+#!/bin/bash
+
+# Task 1: Find the factorial of a number
+echo "Task 1: Factorial"
+echo -n "Enter a number: "
+read num
+fact=1
+for (( i=1; i<=num; i++ )); do
+  fact=$((fact * i))
+done
+echo "Factorial is: $fact"
+
+# Task 2: Count odd digits
+echo "Task 2: Count Odd Digits"
+echo -n "Enter a number: "
+read num
+count=0
+while [ $num -ne 0 ]; do
+  digit=$((num % 10))
+  if (( digit % 2 != 0 )); then
+    count=$((count + 1))
+  fi
+  num=$((num / 10))
+done
+echo "Number of odd digits: $count"
+
+# Task 3: Print Pattern
+echo "Task 3: Print Pattern"
+echo -n "Enter number of rows: "
+read rows
+for (( i=rows; i>=1; i-- )); do
+  for (( j=1; j<=i; j++ )); do
+    echo -n "*"
+  done
+  echo
+done
