@@ -1,6 +1,4 @@
 
-# Operating System Lab Tasks  
-
 ## 📌 About  
 This repository contains OS lab tasks covering process management, threading, scheduling, memory management, and file systems.  
 
