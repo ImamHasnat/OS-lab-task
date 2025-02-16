@@ -1,0 +1,54 @@
+1. If the buying price and selling price of an item is taken as user input, write a program to determine whether the seller has made a profit or incurred a loss.
+Also, determine how much profit he made or the loss he incurred. (Using If-else)
+3. Take any 3 integer numbers.
+Write a program to find out the smallest number among 3 numbers. (Using If-else)
+
+
+Solution-----
+
+
+
+#!/bin/bash
+
+# Take user input for buying price and selling price
+echo "Enter the buying price of the item:"
+read buying_price
+echo "Enter the selling price of the item:"
+read selling_price
+
+# Calculate profit or loss
+if [ $selling_price -gt $buying_price ]; then
+    profit=$((selling_price - buying_price))
+    echo "The seller made a profit of $profit."
+elif [ $selling_price -lt $buying_price ]; then
+    loss=$((buying_price - selling_price))
+    echo "The seller incurred a loss of $loss."
+else
+    echo "No profit, no loss."
+fi
+
+
+
+
+
+#!/bin/bash
+
+# Take user input for three integers
+echo "Enter the first number:"
+read num1
+echo "Enter the second number:"
+read num2
+echo "Enter the third number:"
+read num3
+
+# Find the smallest number
+if [ $num1 -le $num2 ] && [ $num1 -le $num3 ]; then
+    echo "The smallest number is $num1."
+elif [ $num2 -le $num1 ] && [ $num2 -le $num3 ]; then
+    echo "The smallest number is $num2."
+else
+    echo "The smallest number is $num3."
+fi
+
+
+
