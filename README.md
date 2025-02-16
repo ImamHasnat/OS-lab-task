@@ -1,6 +1,7 @@
 
 ## 📌 About  
-This repository contains OS lab tasks.  
+This repository contains Operating System lab tasks
+
 
 ## 🔧 Requirements  
 - Linux/Windows OS  
