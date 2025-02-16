@@ -1,0 +1,29 @@
+Create a file name Employee containing at least 5 rows of 
+
+Id,name, dept, salary
+
+1. Sort the Employee by dept in reverse order
+2. Sort the Employee by name
+3. Count the number of Employee
+
+
+Solution----
+
+
+
+cat > Employee.txt <<EOF
+1,Alice,HR,50000
+2,Bob,IT,60000
+3,Charlie,Finance,55000
+4,David,Marketing,52000
+5,Eve,IT,58000
+EOF
+
+echo "Sorted by Dept (Reverse Order):"
+sort -t, -k3 -r Employee.txt
+
+echo -e "\nSorted by Name:"
+sort -t, -k2 Employee.txt
+
+echo -e "\nNumber of Employees:"
+wc -l < Employee.txt
