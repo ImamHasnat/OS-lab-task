@@ -25,7 +25,7 @@ This repository contains OS lab tasks.
 - Commit and push your changes  
 - Open a Pull Request  
 
-## 📜 License  
+## License  
 This project is free to use.
 
 ---
