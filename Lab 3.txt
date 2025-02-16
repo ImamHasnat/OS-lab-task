@@ -1,0 +1,39 @@
+Take user input for N characters in an array and only output the vowels from those characters.
+
+Create an array to store five integer numbers by asking the user for the inputs. Now, develop a program that checks whether each number present in the array is an even number or an odd number and replaces the even numbers with a '0' and odd numbers with a '1'. Later, the program prints the modified array.
+
+Read stored student ID from a file and split the ID into three separate information: Year, Unique ID, and Semester.
+
+
+
+-------*Solution*----
+
+#!/bin/bash
+
+# Task 1: Extract vowels from user input
+echo "Enter characters:"
+read input
+echo "Vowels in input:"
+echo "$input" | grep -o -i '[aeiou]'
+
+echo "----------------------"
+
+# Task 2: Replace even numbers with '0' and odd numbers with '1'
+echo "Enter 5 numbers separated by space:"
+read -a arr
+echo "Modified array:"
+echo "${arr[@]}" | awk '{for(i=1;i<=NF;i++) printf ($i%2==0 ? "0 " : "1 ")}'
+echo
+
+echo "----------------------"
+
+# Task 3: Extract Year, Unique ID, and Semester from Student ID
+echo "Enter student ID (e.g., 2312345Spring):"
+read id
+year=$(echo "$id" | grep -o '^[0-9]\{2\}')
+unique_id=$(echo "$id" | grep -o '[0-9]\{5\}')
+semester=$(echo "$id" | grep -o '[A-Za-z]*$')
+
+echo "Year: $year"
+echo "Unique ID: $unique_id"
+echo "Semester: $semester"
