@@ -2,7 +2,7 @@
 This repository contains Operating System lab tasks
 
 
-## 🔧 Requirements  
+##  Requirements  
 - Linux/Windows OS  
 - GCC Compiler (for C programs)  
 - Git  
