@@ -1,4 +1,3 @@
-
 ## 📌 About  
 This repository contains Operating System lab tasks
 
